@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: poc-deployment
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: poc-app
+    spec:
+      containers:
+      - name: poc-container
+        image: nginx
+        ports:
+        - containerPort: 80
